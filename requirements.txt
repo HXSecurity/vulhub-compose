@@ -1,0 +1,2 @@
+fire==0.4.0
+docker-compose==1.28.5
