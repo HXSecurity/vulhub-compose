@@ -42,7 +42,7 @@ setup(
     description='easy command tool for vulhub',
     long_description=read('README.md'),
     long_description_content_type='text/markdown',
-    url='https://huoxian.cn/',
+    url='https://www.huoxian.cn/',
     project_urls={
         'Source': 'https://github.com/huoxianclub/vulhub-compose',
         'Tracker': 'https://github.com/huoxianclub/vulhub-compose/issues',
