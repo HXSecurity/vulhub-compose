@@ -9,6 +9,11 @@ vulhub-compose是一款屏蔽docker-compose的命令行工具，目的是降低�
 ## 快速开始
 如果要下载vulnhub项目或已经下载了vulnhub项目，则可以直接使用本地模式。 如果您不想下载，可以使用远程模式。vulhub项目的前置安装步骤依然需要完成，请自行前往[vulhub项目](https://github.com/vulhub/vulhub)安装docker及其它部分。
 
+#### 下载vulhub-cli
+```shell script
+$ pip install vulhub-cli
+```
+
 #### 本地模式
 ```shell script
 # 使用相对路径启动靶场环境

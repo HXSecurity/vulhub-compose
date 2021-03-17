@@ -9,6 +9,11 @@
 ## Quick start
 If you want to download the vulhub project or have already downloaded the vulhub project, you can directly use the local mode; if you don’t want to download, you can use the remote mode
 
+#### download vulhub-cli
+```shell script
+$ pip install vulhub-cli
+```
+
 #### local mode
 ```shell script
 # Specify relative path
