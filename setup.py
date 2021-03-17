@@ -46,6 +46,9 @@ setup(
     project_urls={
         'Source': 'https://github.com/huoxianclub/vulhub-compose',
         'Tracker': 'https://github.com/huoxianclub/vulhub-compose/issues',
+        'VulHub': 'https://github.com/vulhub/vulhub',
+        'LingZhi-IAST': 'http://iast.huoxian.cn/login',
+        'LingZhi-Doc': 'https://huoxianclub.github.io/LingZhi/#/README'
     },
     author='Owefsad, Inc.',
     license='MIT License',
