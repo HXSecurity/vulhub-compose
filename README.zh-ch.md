@@ -7,31 +7,43 @@ vulhub-compose是一款屏蔽docker-compose的命令行工具，目的是降低�
 [English](https://github.com/huoxianclub/vulhub-compose/blob/main/README.md)
 
 ## 快速开始
-vulhub项目的前置安装步骤依然需要完成，请自行前往[vulhub项目](https://github.com/vulhub/vulhub)安装docker及其它部分。
+如果要下载vulnhub项目或已经下载了vulnhub项目，则可以直接使用本地模式。 如果您不想下载，可以使用远程模式。vulhub项目的前置安装步骤依然需要完成，请自行前往[vulhub项目](https://github.com/vulhub/vulhub)安装docker及其它部分。
+
+#### 本地模式
 ```shell script
-# 下载vulhub项目
-$ wget https://github.com/vulhub/vulhub/archive/master.zip -O vulhub-master.zip
-$ unzip vulhub-master.zip
-$ cd vulhub-master
+# 使用相对路径启动靶场环境
+$ vulhub-cli local start --app fastjson/1.2.24-rce
+$ vulhub-cli local start --app ./fastjson/1.2.24-rce
 
-# 安装vulhub-cli工具
-$ pip install vulhub-cli
+# 使用绝对路径启动靶场环境
+$ vulhub-cli local start --app /opt/vulhub/fastjson/1.2.24-rce
 
-# 创建靶场环境
-$ vulhub-cli start --path ./fastjson/1.2.24-rce
-
-# 停止并销毁靶场
-$ vulhub-cli stop --path ./fastjson/1.2.24-rce
-
-# 创建靶场并自动安装洞态IAST（原灵芝IAST）
-$ vulhub-cli start --path fastjson/1.2.24-rce --iast=true
-
-# 停止并销毁带IAST的靶场环境
-$ vulhub-cli stop --path=./flask/ssti --iast=true
+# 停止并销毁靶场环境
+$ vulhub-cli local stop --app fastjson/1.2.24-rce
 ```
 
-## 洞态IAST
-洞态IAST推出代码审计版本，在Java WEB应用中安装agent后可用于收集污点调用链，包括组件级数据，只需要编写对应的hook策略即可实现部分**0 Day**漏洞的挖掘，教程可在[官方文档](https://huoxianclub.github.io/LingZhi/#/README)中查看。
+#### 远程模式
+```shell script
+# 指定vulhub app的名称，如: fastjson/1.2.24-rce
+$ vulhub-cli remote start --app fastjson/1.2.24-rce
+
+# 停止并销毁靶场环境
+$ vulhub-cli remote stop --app fastjson/1.2.24-rce
+```
 
 
+## Plugin System
+`vulhub-cli` provides plug-in functions, which can support custom plug-ins to achieve specific functions.
 
+### Plugin: lingzhi
+灵芝IAST推出代码审计版本，在Java WEB应用中安装agent后可用于收集污点调用链，包括组件级数据，只需要编写对应的hook策略即可实现部分**0 Day**漏洞的挖掘，教程可在[官方文档](https://huoxianclub.github.io/LingZhi/#/README)中查看。
+
+#### 使用方法
+启动方法与正常启动方法相同，只需要增加`plugin`参数指定使用`lingzhi`插件即可
+```shell script
+# 启动预装IAST的靶场环境
+$ vulhub-cli remote start --app fastjson/1.2.24-rce --plugin lingzhi
+
+# 停止并销毁预装IAST的靶场环境
+$ vulhub-cli remote stop --app fastjson/1.2.24-rce --plugin lingzhi
+```
