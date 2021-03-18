@@ -6,6 +6,20 @@
 
 
 class BasePlugin(object):
+    def __init__(self):
+        self._args = ""
+
+    @property
+    def args(self):
+        return self._args
+
+    @args.setter
+    def args(self, args):
+        self._args = args
+
+    def parse_args(self):
+        pass
+
     def attach(self, yaml_file):
         pass
 
