@@ -49,8 +49,11 @@ Lingzhi IAST is an interactive application security testing tool independently d
 #### Usage
 The startup method is the same as the normal startup method, just add the `plugin` parameter to specify the use of the `lingzhi` plugin.
 ```shell script
-# Start the vulhub's app with Lingzhi IAST
+# Start the vulhub's app with public Lingzhi IAST agent
 $ vulhub-cli remote start --app fastjson/1.2.24-rce --plugin lingzhi
+
+# Start the vulhub's app with your own Lingzhi IAST agent
+$ vulhub-cli remote start --app fastjson/1.2.24-rce --plugin lingzhi --plugin-args "token=<lingzhi iast token>"
 
 # Stop the vulhub's app with Lingzhi IAST
 $ vulhub-cli remote stop --app fastjson/1.2.24-rce --plugin lingzhi
