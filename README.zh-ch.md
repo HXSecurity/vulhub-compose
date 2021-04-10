@@ -40,18 +40,18 @@ $ vulhub-cli remote stop --app fastjson/1.2.24-rce
 ## Plugin System
 `vulhub-cli` provides plug-in functions, which can support custom plug-ins to achieve specific functions.
 
-### Plugin: lingzhi
+### Plugin: dongtai
 灵芝IAST推出代码审计版本，在Java WEB应用中安装agent后可用于收集污点调用链，包括组件级数据，只需要编写对应的hook策略即可实现部分**0 Day**漏洞的挖掘，教程可在[官方文档](https://huoxianclub.github.io/LingZhi/#/README)中查看。
 
 #### 使用方法
-启动方法与正常启动方法相同，只需要增加`plugin`参数指定使用`lingzhi`插件即可，如需在靶场中安装**私有**agent，需要前往[洞态](http://aws.iast.huoxian.cn:8000/)的**部署页面**获取并指定token
+启动方法与正常启动方法相同，只需要增加`plugin`参数指定使用`dongtai`插件即可，如需在靶场中安装**私有**agent，需要前往[洞态](http://aws.iast.huoxian.cn:8000/)的**部署页面**获取并指定token
 ```shell script
 # 启动靶场并安装公共的灵芝IAST agent
-$ vulhub-cli remote start --app fastjson/1.2.24-rce --plugin lingzhi
+$ vulhub-cli remote start --app fastjson/1.2.24-rce --plugin dongtai
 
 # 启动靶场并安装个人灵芝IAST agent，token可前往"部署IAST"页面获取
-$ vulhub-cli remote start --app fastjson/1.2.24-rce --plugin lingzhi --plugin-args "token=<lingzhi iast token>"
+$ vulhub-cli remote start --app fastjson/1.2.24-rce --plugin dongtai --plugin-args "token=<dongtai iast token>"
 
 # 停止并销毁预装IAST的靶场环境
-$ vulhub-cli remote stop --app fastjson/1.2.24-rce --plugin lingzhi
+$ vulhub-cli remote stop --app fastjson/1.2.24-rce --plugin dongtai
 ```

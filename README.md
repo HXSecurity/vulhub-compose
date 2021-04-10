@@ -43,18 +43,18 @@ $ vulhub-cli remote stop --app fastjson/1.2.24-rce
 ## Plugin System
 `vulhub-cli` provides plug-in functions, which can support custom plug-ins to achieve specific functions.
 
-### Plugin: lingzhi
-Lingzhi IAST is an interactive application security testing tool independently developed by [FireWire platform](https://www.huoxian.cn/) to detect vulnerabilities in application systems; lingzhi IAST supports the detection of some 0 Day vulnerabilities. Now, you can use the vulhub-cli tool to quickly create a shooting range and install lingzhi IAST to experience the vulnerability detection function.
+### Plugin: dongtai
+Lingzhi IAST is an interactive application security testing tool independently developed by [FireWire platform](https://www.huoxian.cn/) to detect vulnerabilities in application systems; dongtai IAST supports the detection of some 0 Day vulnerabilities. Now, you can use the vulhub-cli tool to quickly create a shooting range and install dongtai IAST to experience the vulnerability detection function.
 
 #### Usage
-The startup method is the same as the normal startup method, just add the `plugin` parameter to specify the use of the `lingzhi` plugin.
+The startup method is the same as the normal startup method, just add the `plugin` parameter to specify the use of the `dongtai` plugin.
 ```shell script
 # Start the vulhub's app with public Lingzhi IAST agent
-$ vulhub-cli remote start --app fastjson/1.2.24-rce --plugin lingzhi
+$ vulhub-cli remote start --app fastjson/1.2.24-rce --plugin dongtai
 
 # Start the vulhub's app with your own Lingzhi IAST agent
-$ vulhub-cli remote start --app fastjson/1.2.24-rce --plugin lingzhi --plugin-args "token=<lingzhi iast token>"
+$ vulhub-cli remote start --app fastjson/1.2.24-rce --plugin dongtai --plugin-args "token=<dongtai iast token>"
 
 # Stop the vulhub's app with Lingzhi IAST
-$ vulhub-cli remote stop --app fastjson/1.2.24-rce --plugin lingzhi
+$ vulhub-cli remote stop --app fastjson/1.2.24-rce --plugin dongtai
 ```

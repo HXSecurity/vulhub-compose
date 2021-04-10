@@ -19,15 +19,7 @@ todo:
 """
 
 
-class LingZhi(BasePlugin):
-    @staticmethod
-    def get_iast_service():
-        return {
-            'image': 'webhubforiast/iast_lingzhi_agent:latest',
-            'container_name': 'volumn_with_iast_agent',
-            'volumes': ['/tmp']
-        }
-
+class DongTai(BasePlugin):
     @staticmethod
     def get_iast_yaml_content(yaml_file):
         with open(yaml_file, 'r') as f:
@@ -50,7 +42,7 @@ class LingZhi(BasePlugin):
 
     @staticmethod
     def get_iast_file(yaml_file):
-        data = LingZhi.get_iast_yaml_content(yaml_file)
+        data = DongTai.get_iast_yaml_content(yaml_file)
         path = os.path.dirname(yaml_file)
         iast_yaml = os.path.join(path, 'iast.yml')
         with open(iast_yaml, 'w') as f:
