@@ -5,12 +5,12 @@
 # project: vulhub-compose
 import os
 
-from vulhub.plugin.huoxian_iast import LingZhi
+from vulhub.plugin.huoxian_iast import DongTai
 
 
 class BaseCli(object):
     PLUGINS = {
-        'lingzhi': LingZhi()
+        'dongtai': DongTai()
     }
 
     def __init__(self):

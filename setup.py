@@ -47,8 +47,8 @@ setup(
         'Source': 'https://github.com/huoxianclub/vulhub-compose',
         'Tracker': 'https://github.com/huoxianclub/vulhub-compose/issues',
         'VulHub': 'https://github.com/vulhub/vulhub',
-        'LingZhi-IAST': 'http://iast.huoxian.cn/login',
-        'LingZhi-Doc': 'https://huoxianclub.github.io/LingZhi/#/README'
+        'DongTai-IAST': 'http://iast.huoxian.cn:8000/',
+        'DongTai-Doc': 'https://hxsecurity.github.io/DongTaiDoc/#/doc/deploy/vulns'
     },
     author='Owefsad, Inc.',
     license='MIT License',
